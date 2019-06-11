@@ -1,5 +1,4 @@
 FROM python:alpine
-MAINTAINER Mike Petersen <mike@odania-it.de>
 
 RUN apk --no-cache add curl
 ADD run.sh /run.sh
