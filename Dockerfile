@@ -1,5 +1,5 @@
 FROM python:alpine
-MAINTAINER Benny Iskandar <benny.iskandar@gmail.com>
+MAINTAINER Mike Petersen <mike@odania-it.de>
 
 RUN apk --no-cache add curl
 ADD run.sh /run.sh
@@ -9,10 +9,10 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 	&& mv kubectl /usr/local/bin \
 	&& chmod +x /usr/local/bin/kubectl
 
-RUN adduser -S benny
-USER benny
-WORKDIR /home/benny
-ENV PATH /usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/benny/.local/bin
+RUN adduser -S user
+USER user
+WORKDIR /home/user
+ENV PATH /usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/user/.local/bin
 
 # Install awscli
 RUN pip install awscli --upgrade --user
